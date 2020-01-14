@@ -33,7 +33,9 @@ function setOperator(number){
         display.innerHTML += " / ";
         opString = " / ";
     }
-
+    if(operator === 3){}
+    if(operator === 2){}
+    if(operator === 1){}
     if(flag === true){
         display.innerHTML = num1 + opString;
     }
@@ -76,9 +78,11 @@ function equalClick(){
     display.innerHTML = roundedResult;
 
     if(roundedResult === "Infinity"){
+        display.innerHTML = "";
         alert("try again, idiot");
     }
     if(roundedResult === "NaN"){
+        display.innerHTML = "";
         alert("not doing that, sorry");
     }
 }
@@ -87,13 +91,16 @@ function backspace(){
     var temp2 = "";
 
     if(equalTo === true){
-
+        clearButton();
     }
     if(flag === false){
-
+        temp1 = num1.substring(0, num1.length-1);
+        num1 = temp1;
+        display.innerHTML = num1;
     }
-    if(){
-
+    else if(flag === true){
+        display.innerHTML = num1;
+        flag = false;
     }
     if(num2 != ""){
         temp2 = num2.substring(0, num2.length-1);
