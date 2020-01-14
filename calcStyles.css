@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
+
+body{
+    background: white;
+    background: linear-gradient(lightblue, blue);
+    font-size: 20px;
+    font-family: 'Alata', sans-serif;
+}
+html{
+    height: fit-content;
+}
+
+/* Header */ 
+
+.header{
+    text-align: center;
+    background-color: black;
+    color: blue;
+    border: chocolate solid 5px;
+    margin: 10px 0px;
+}
+h1{
+    margin: 10px 0px;
+    font-size: 40;
+}
+
+/* Calculator */
+
+#calculator{
+    width: 419px;
+    height: auto;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: beige;
+    padding-top: 20px; 
+}
+
+/* Display, Clear, and Delete Buttons */
+
+#display{
+    border: solid 2px blue;
+    height: 45px;
+    padding: 5px;
+    text-align: right;
+    float: none;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 7px;
+}
+#clear, #delete{
+    height: 50px;
+    border-radius: 5px;
+    background-color: black;
+    text-align: center;
+    margin: 20px 16px 0px 0px;
+    color: red;
+}
+#clearDelete{
+    width: 100%;
+}
+button{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 40px;
+    background-color: blueviolet;
+
+}
+button:hover{
+    background-color: yellowgreen;
+    color: black;
+}
+.operator{
+    background-color: lightblue;
+    color: black;
+}
+#equals{
+    color: aliceblue;
+    background-color: bisque;
+}
