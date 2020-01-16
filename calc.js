@@ -1,7 +1,7 @@
 // Global Variables
 
-var num1;
-var num2;
+var num1 = "";
+var num2 = "";
 var operator;
 var flag = false;
 var display = document.getElementById("display");
@@ -18,26 +18,36 @@ function setValue(number){
         num1 += number;
         display.innerHTML = num1;
     }
-    if(num1.length > 10 || num2.length > 10){
-        alert("🤡");
-    }
     else{
-        num += number;
-        display
+        num2 += number;
+        display.innerHTML += number;
+    }
+    if(num1.length > 10 || num2.length > 10){
+        display.innerHTML = "Max number of digits reached.";
     }
 }
-function setOperator(number){
+function setOperators(number){
     operator = number;
     flag = true;
     if(operator === 4){
         display.innerHTML += " / ";
         opString = " / ";
     }
-    if(operator === 3){}
-    if(operator === 2){}
-    if(operator === 1){}
+    else if(operator === 3){
+        display.innerHTML += " * ";
+        opString = " * ";
+    }
+    else if(operator === 2){
+        display.innerHTML += " - ";
+        opString = " - ";
+    }
+    else if(operator === 1){
+        display.innerHTML += " + ";
+        opString = " + ";
+    }
     if(flag === true){
         display.innerHTML = num1 + opString;
+        num2 = "";
     }
     if(flag === true && num1 === ""){
         clearButton();
@@ -78,12 +88,10 @@ function equalClick(){
     display.innerHTML = roundedResult;
 
     if(roundedResult === "Infinity"){
-        display.innerHTML = "";
-        alert("try again, idiot");
+        display.innerHTML = "You cannot divide by zero.";
     }
     if(roundedResult === "NaN"){
-        display.innerHTML = "";
-        alert("not doing that, sorry");
+        display.innerHTML = "This doesn't give a number.";
     }
 }
 function backspace(){
@@ -106,12 +114,12 @@ function backspace(){
         temp2 = num2.substring(0, num2.length-1);
         num2 = temp2;
         flag = true;
-        display,innerHTML = num1 + opString + num2;
+        display.innerHTML = num1 + opString + num2;
     }
 }
 function setDecimal(){
     if(flag === false){
-        if(num1 = ""){
+        if(num1 === ""){
             num1="0.";
             display.innerHTML=num1;
         }
@@ -123,12 +131,43 @@ function setDecimal(){
 
     if(flag === true){
         if(num2 === ""){
-            num2 = "0.";
-            display.innerHTML = num2;
+            num2="0.";
+            display.innerHTML += num2;
         }
         if(num2.indexOf(".") === -1){
             num2 += ".";
             display.innerHTML = num1 + opString + num2;
         }
+    }
+}
+function clearEntry(){
+    if(flag===false){
+        clearButton();
+    }else if(flag===true){
+        num2 = "";
+        display.innerHTML = num1 + opString;
+    }
+}
+function xButton(){
+    if(flag === false){
+        num1 = 1/num1;
+        display.innerHTML = num1;
+        equalTo = true;
+    }else if(flag===true){
+        display.innerHTML = "Cannot do with two variables.";
+    }
+}
+function powerButton(){
+    if(flag===false){
+        equalTo = true;
+        num1=Math.pow(num1, 2);
+        display.innerHTML = num1;
+    }
+}
+function sqrtButton(){
+    if(flag===false){
+        num1=Math.sqrt(num1);
+        display.innerHTML = num1;
+        equalTo = true;
     }
 }

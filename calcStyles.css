@@ -2,7 +2,7 @@
 
 body{
     background: white;
-    background: linear-gradient(lightblue, blue);
+    background: linear-gradient(black, hotpink, pink, lightpink, white);
     font-size: 20px;
     font-family: 'Alata', sans-serif;
 }
@@ -14,9 +14,9 @@ html{
 
 .header{
     text-align: center;
-    background-color: black;
-    color: blue;
-    border: chocolate solid 5px;
+    background-color: white;
+    color: rgb(249, 119, 229);
+    border: rgb(141, 44, 160) solid 5px;
     margin: 10px 0px;
 }
 h1{
@@ -32,29 +32,30 @@ h1{
     margin: 30px auto;
     padding: 10px;
     border-radius: 10px;
-    background-color: beige;
+    background-color: rgb(141, 44, 160);
     padding-top: 20px; 
+    border: solid black 5px;
 }
 
 /* Display, Clear, and Delete Buttons */
 
 #display{
-    border: solid 2px blue;
+    border: solid 2px black;
     height: 45px;
     padding: 5px;
     text-align: right;
     float: none;
     margin: 0 auto;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.77);
     border-radius: 7px;
 }
-#clear, #delete{
+#clear, #delete, #entry, #divx, #power, #sqrt{
     height: 50px;
     border-radius: 5px;
-    background-color: black;
+    background-color: rgb(249, 119, 229);
     text-align: center;
     margin: 20px 16px 0px 0px;
-    color: red;
+    color: black;
 }
 #clearDelete{
     width: 100%;
@@ -64,18 +65,19 @@ button{
     height: 80px;
     margin: 10px;
     border-radius: 40px;
-    background-color: blueviolet;
+    background-color: rgb(223, 109, 9);
 
 }
 button:hover{
-    background-color: yellowgreen;
+    transition: all 1s;
+    background-color: white;
     color: black;
 }
 .operator{
-    background-color: lightblue;
-    color: black;
+    background-color: rgb(109, 0, 177);
+    color: white;
 }
 #equals{
-    color: aliceblue;
-    background-color: bisque;
+    color: black;
+    background-color:rgb(249, 119, 229);
 }
